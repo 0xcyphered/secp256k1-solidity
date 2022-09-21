@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity =0.8.16;
+pragma solidity =0.8.17;
 
 /**
  * @title SECPK256K1 public key recovery Library
  * @dev Library providing arithmetic operations over signed `secpk256k1` signed message due to recover the signer public key EC point in `Solidity`.
- * @author 0xcyphered
+ * @author cyphered.eth
  */
 library SECP256K1 {
     // Elliptic curve Constants
