@@ -39,7 +39,7 @@ library SECP256K1 {
 
         uint256 y2 = addmod(mulmod(x, mulmod(x, x, P), P), addmod(mulmod(x, A, P), B, P), P);
         y2 = expMod(y2, (P + 1) / 4);
-        uint256 y = (y2 + v + 2) % 2 == 0 ? y2 : P - y2;
+        uint256 y = ((y2 + v + 2) & 1 == 0) ? y2 : P - y2;
 
         (uint256 qx, uint256 qy, uint256 qz) = jacMul(mulmod(rInv, N - digest, N), GX, GY, 1);
         (uint256 qx2, uint256 qy2, uint256 qz2) = jacMul(mulmod(rInv, s, N), x, y, 1);
